@@ -45,8 +45,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -55,21 +59,10 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txt_barcode);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txtExpiryDate);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtDesc);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.txtFile);
             this.panel1.Controls.Add(this.dgItems);
-            this.panel1.Controls.Add(this.txtPrice);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtName);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -78,7 +71,7 @@
             // 
             // txt_barcode
             // 
-            this.txt_barcode.Location = new System.Drawing.Point(88, 78);
+            this.txt_barcode.Location = new System.Drawing.Point(89, 10);
             this.txt_barcode.Name = "txt_barcode";
             this.txt_barcode.Size = new System.Drawing.Size(164, 20);
             this.txt_barcode.TabIndex = 30;
@@ -86,7 +79,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 78);
+            this.label5.Location = new System.Drawing.Point(8, 10);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 29;
@@ -94,7 +87,7 @@
             // 
             // txtExpiryDate
             // 
-            this.txtExpiryDate.Location = new System.Drawing.Point(88, 280);
+            this.txtExpiryDate.Location = new System.Drawing.Point(342, 101);
             this.txtExpiryDate.Name = "txtExpiryDate";
             this.txtExpiryDate.Size = new System.Drawing.Size(164, 20);
             this.txtExpiryDate.TabIndex = 28;
@@ -102,7 +95,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 280);
+            this.label4.Location = new System.Drawing.Point(261, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 27;
@@ -110,7 +103,7 @@
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(88, 189);
+            this.txtDesc.Location = new System.Drawing.Point(342, 10);
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(164, 66);
@@ -119,7 +112,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 189);
+            this.label3.Location = new System.Drawing.Point(264, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 25;
@@ -130,7 +123,7 @@
             this.btnSave.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSave.Location = new System.Drawing.Point(661, 367);
+            this.btnSave.Location = new System.Drawing.Point(713, 403);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 23;
@@ -143,7 +136,7 @@
             this.button2.BackColor = System.Drawing.Color.DodgerBlue;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(177, 318);
+            this.button2.Location = new System.Drawing.Point(431, 139);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 22;
@@ -157,7 +150,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(153, 19);
+            this.button1.Location = new System.Drawing.Point(193, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 23);
             this.button1.TabIndex = 21;
@@ -167,7 +160,7 @@
             // 
             // txtFile
             // 
-            this.txtFile.Location = new System.Drawing.Point(4, 19);
+            this.txtFile.Location = new System.Drawing.Point(44, 19);
             this.txtFile.Name = "txtFile";
             this.txtFile.Size = new System.Drawing.Size(143, 20);
             this.txtFile.TabIndex = 20;
@@ -177,15 +170,15 @@
             this.dgItems.AllowUserToAddRows = false;
             this.dgItems.AllowUserToDeleteRows = false;
             this.dgItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgItems.Location = new System.Drawing.Point(276, 19);
+            this.dgItems.Location = new System.Drawing.Point(13, 264);
             this.dgItems.Name = "dgItems";
             this.dgItems.ReadOnly = true;
-            this.dgItems.Size = new System.Drawing.Size(460, 322);
+            this.dgItems.Size = new System.Drawing.Size(761, 152);
             this.dgItems.TabIndex = 19;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(88, 152);
+            this.txtPrice.Location = new System.Drawing.Point(89, 84);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(164, 20);
             this.txtPrice.TabIndex = 18;
@@ -193,7 +186,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 152);
+            this.label2.Location = new System.Drawing.Point(8, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 17;
@@ -201,7 +194,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(88, 114);
+            this.txtName.Location = new System.Drawing.Point(89, 46);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(164, 20);
             this.txtName.TabIndex = 16;
@@ -209,11 +202,42 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 114);
+            this.label1.Location = new System.Drawing.Point(8, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 15;
             this.label1.Text = "Tên sản phẩm";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtFile);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(13, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(479, 50);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txt_barcode);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txtExpiryDate);
+            this.groupBox2.Controls.Add(this.txtName);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.txtDesc);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.txtPrice);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Location = new System.Drawing.Point(13, 80);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(761, 178);
+            this.groupBox2.TabIndex = 32;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
             // 
             // ManageProducts
             // 
@@ -228,8 +252,11 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ManageProducts_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -252,5 +279,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_barcode;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

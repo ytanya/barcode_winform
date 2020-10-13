@@ -1,6 +1,6 @@
 ﻿namespace BarCode
 {
-    partial class Product_Information
+    partial class GetProductById
     {
         /// <summary>
         /// Required designer variable.

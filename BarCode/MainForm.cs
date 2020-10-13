@@ -51,7 +51,7 @@ namespace BarCode
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            var productinfo = new Product_Information();
+            var productinfo = new GetProductById();
             productinfo.TopLevel = false;
             pnlItem.Controls.Add(productinfo);
             productinfo.Show();

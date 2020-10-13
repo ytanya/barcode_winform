@@ -12,13 +12,13 @@ using MySql.Data.MySqlClient;
 
 namespace BarCode
 {
-    public partial class Product_Information : Form
+    public partial class GetProductById : Form
     {
         Thread delayedCalculationThread;
         int delay = 0;
         string conn = DBAccess.ConnectionString;
         DataTable dtMain = new DataTable();
-        public Product_Information()
+        public GetProductById()
         {
             InitializeComponent();
         }

@@ -42,7 +42,6 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Barcode);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 450);
@@ -52,9 +51,9 @@
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox2.Location = new System.Drawing.Point(143, 91);
+            this.textBox2.Location = new System.Drawing.Point(254, 165);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(235, 26);
             this.textBox2.TabIndex = 8;
@@ -62,30 +61,30 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(34, 97);
+            this.label2.Location = new System.Drawing.Point(145, 165);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 20);
+            this.label2.Size = new System.Drawing.Size(80, 24);
             this.label2.TabIndex = 7;
             this.label2.Text = "Đơn giá";
             // 
             // Barcode
             // 
             this.Barcode.AutoSize = true;
-            this.Barcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Barcode.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Barcode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Barcode.Location = new System.Drawing.Point(34, 37);
+            this.Barcode.Location = new System.Drawing.Point(145, 111);
             this.Barcode.Name = "Barcode";
-            this.Barcode.Size = new System.Drawing.Size(79, 20);
+            this.Barcode.Size = new System.Drawing.Size(86, 24);
             this.Barcode.TabIndex = 6;
-            this.Barcode.Text = "BarCode";
+            this.Barcode.Text = "Barcode";
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox1.Location = new System.Drawing.Point(143, 31);
+            this.textBox1.Location = new System.Drawing.Point(254, 105);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(235, 26);
             this.textBox1.TabIndex = 5;

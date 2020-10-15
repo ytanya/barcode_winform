@@ -19,6 +19,7 @@ namespace BarCode
         int delay = 0;
         string conn = DBAccess.ConnectionString;
         DataTable dtMain = new DataTable();
+        string pathCSV = System.AppDomain.CurrentDomain.BaseDirectory + "taphoaviet.csv";
         public CheckPrice()
         {
             InitializeComponent();
@@ -78,12 +79,16 @@ namespace BarCode
                     }
                     else
                     {
-                        var values = File.ReadLines("C:\\Users\\Tanya\\Desktop\\banhmy.csv").Skip(1).Select(line => line.Split(',')).ToList();
+                        if (File.Exists(pathCSV))
+                        {
+                            var values = File.ReadLines(pathCSV).Skip(1).Select(line => line.Split(',')).ToList();
 
-                        var price = values.Where(x => x[0] == id)
-                                            .Select(x => x[3])
-                                            .FirstOrDefault();
-                        textBox2.Text = price;
+                            var price = values.Where(x => x[0] == id)
+                                                .Select(x => x[3])
+                                                .FirstOrDefault();
+                            textBox2.Text = price;
+                        }
+                        
                     }
 
                     textBox1.Text = string.Empty;

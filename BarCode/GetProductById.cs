@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -18,6 +19,7 @@ namespace BarCode
         int delay = 0;
         string conn = DBAccess.ConnectionString;
         DataTable dtMain = new DataTable();
+        string pathCSV = System.AppDomain.CurrentDomain.BaseDirectory + "taphoaviet.csv";
         public GetProductById()
         {
             InitializeComponent();
@@ -57,29 +59,56 @@ namespace BarCode
                 Invoke(new Action(() =>
                 {
                     string id = tb_data.Text;
-                    string query = "Select `products`.`id`,`name`,`description`,`expiration_date`, `pricemanagement`.`price` from `products` join `pricemanagement` on `products`.`id` = `pricemanagement`.`productid` where `products`.`id` = '" + id + "'; ";
-
-                    using (MySqlConnection connection = new MySqlConnection(conn))
+                    if (id != string.Empty)
                     {
-                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        if (DBAccess.IsServerConnected())
                         {
-                            MySqlDataAdapter sda = new MySqlDataAdapter(command);
-                            DataTable dt = new DataTable();
-                            sda.Fill(dt);
-                            dtMain.Merge(dt);
+                            string query = "Select `products`.`id`,`name`,`description`,`expiration_date`, `pricemanagement`.`price` from `products` join `pricemanagement` on `products`.`id` = `pricemanagement`.`productid` where `products`.`id` = '" + id + "'; ";
 
-                            for (int ccc = 0; ccc < dtMain.Columns.Count; ccc++)
+                            using (MySqlConnection connection = new MySqlConnection(conn))
                             {
-                                string name = dtMain.Columns["name"].ToString();
-                                string description = dtMain.Columns["description"].ToString();
-                                string icoFileName = dtMain.Columns["expiration_date"].ToString();
-                                string installScript = dtMain.Columns["price"].ToString();
-                            }
-                            dataGridView1.DataSource = dtMain;
-                            
-                        }
-                    }
+                                using (MySqlCommand command = new MySqlCommand(query, connection))
+                                {
+                                    MySqlDataAdapter sda = new MySqlDataAdapter(command);
+                                    DataTable dt = new DataTable();
+                                    dt.Columns.Add("Barcode");
+                                    dt.Columns.Add("Ten San Pham");
+                                    dt.Columns.Add("Mo ta");
+                                    dt.Columns.Add("Don gia");
+                                    dt.Columns.Add("Han su dung");
+                                    dt.Columns.Add("Nha san xuat");
+                                    sda.Fill(dt);
+                                    dtMain.Merge(dt);
 
+                                    //for (int ccc = 0; ccc < dtMain.Columns.Count; ccc++)
+                                    //{
+                                    //    string name = dtMain.Columns["name"].ToString();
+                                    //    string description = dtMain.Columns["description"].ToString();
+                                    //    string expiration_date = dtMain.Columns["expiration_date"].ToString();
+                                    //    string installScript = dtMain.Columns["price"].ToString();
+                                    //    s
+                                    //}
+                                   
+
+                                }
+                            }
+                        }
+                        else
+                        {
+                            var values = File.ReadLines(pathCSV).Skip(1).Select(line => line.Split(',')).ToList();
+
+                            var listProduct = values.Where(x => x[0] == id).ToList();
+                            dtMain.Columns.Add("Barcode");
+                            dtMain.Columns.Add("Ten San Pham");
+                            dtMain.Columns.Add("Mo ta");
+                            dtMain.Columns.Add("Don gia");
+                            dtMain.Columns.Add("Han su dung");
+                            dtMain.Columns.Add("Nha san xuat");
+                            foreach (var row in listProduct)
+                                dtMain.Rows.Add(row);
+                        }
+                        dataGridView1.DataSource = dtMain;
+                    }
                     tb_data.Text = string.Empty;
                     this.ActiveControl = tb_data;
                     

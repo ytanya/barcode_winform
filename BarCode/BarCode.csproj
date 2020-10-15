@@ -7,7 +7,7 @@
     <ProjectGuid>{256DC5F3-D1D0-4856-89F1-5E0EC67A442C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>BarCode</RootNamespace>
-    <AssemblyName>BarCode</AssemblyName>
+    <AssemblyName>TapHoaViet</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -124,6 +124,7 @@
     <Compile Include="CheckPrice.Designer.cs">
       <DependentUpon>CheckPrice.cs</DependentUpon>
     </Compile>
+    <Compile Include="CSVHelper.cs" />
     <Compile Include="DBAccess.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -171,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GetProductById.resx">
       <DependentUpon>GetProductById.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product_Info.resx">
+      <DependentUpon>Product_Info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -21,8 +21,15 @@ namespace BarCode
         private void MainForm_Load(object sender, EventArgs e)
         {
             //pnlItem.Visible = false;
-            //this.pnlItem.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, this.ClientSize.Height / 2 - panel1.Size.Height / 2);
+            this.pnlItem.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, this.ClientSize.Height / 2 - panel1.Size.Height / 2);
             //this.pnlItem.Anchor = AnchorStyles.None;
+            int y = (pn_Right.Size.Height - 105 * 6) / 7;
+            btn_Generate.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, y);
+            btn_Input.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, y*4);
+            btn_Search.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, y * 7);
+            btn_Info.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, y * 10);
+            btn_CheckPrice.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, y * 13);
+            btn_Exit.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, y * 16);
         }
 
         
@@ -35,11 +42,6 @@ namespace BarCode
             generatebarcode.Show();
         }       
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnInput_Click(object sender, EventArgs e)
         {
             var manageProduct = new ManageProducts();
@@ -51,19 +53,26 @@ namespace BarCode
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            var productinfo = new GetProductById();
-            productinfo.TopLevel = false;
-            pnlItem.Controls.Add(productinfo);
-            productinfo.Show();
-            //pnlItem.Visible = false;
+            var getProductById = new GetProductById();
+            getProductById.TopLevel = false;
+            pnlItem.Controls.Add(getProductById);
+            getProductById.Show();
         }
 
         private void btn_Info_Click(object sender, EventArgs e)
         {
-
+            var productinfo = new Product_Info();
+            productinfo.TopLevel = false;
+            pnlItem.Controls.Add(productinfo);
+            productinfo.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_CheckPrice_Click(object sender, EventArgs e)
         {
             var checkprice = new CheckPrice();
             checkprice.TopLevel = false;

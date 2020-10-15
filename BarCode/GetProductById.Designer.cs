@@ -48,9 +48,10 @@
             // 
             // tb_data
             // 
-            this.tb_data.Location = new System.Drawing.Point(115, 20);
+            this.tb_data.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_data.Location = new System.Drawing.Point(109, 27);
             this.tb_data.Name = "tb_data";
-            this.tb_data.Size = new System.Drawing.Size(278, 20);
+            this.tb_data.Size = new System.Drawing.Size(278, 26);
             this.tb_data.TabIndex = 8;
             this.tb_data.Click += new System.EventHandler(this.textBox2_TextChanged);
             this.tb_data.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -69,18 +70,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(17, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(86, 24);
             this.label1.TabIndex = 6;
             this.label1.Text = "Barcode";
             // 
-            // Product_Information
+            // GetProductById
             // 
             this.ClientSize = new System.Drawing.Size(617, 396);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Product_Information";
+            this.Name = "GetProductById";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Product_Information_Load);
             this.panel1.ResumeLayout(false);

@@ -11,7 +11,6 @@ namespace BarCode
     public partial class GenerateBarcode : Form
     {
         //key pair
-        string key = "SomeUniqueKey";
         public GenerateBarcode()
         {
             InitializeComponent();
@@ -105,7 +104,19 @@ namespace BarCode
         //    }
         //}
 
-        private void button1_Click(object sender, EventArgs e)
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(pictureBox1.Image, 100, 100, 700, 600);
+        }
+
+        private void GenerateBarcode_Load(object sender, EventArgs e)
+        {
+            this.panel1.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, this.ClientSize.Height / 2 - panel1.Size.Height / 2);
+            this.panel1.Anchor = AnchorStyles.None;
+            this.ActiveControl = textBox1;
+        }
+
+        private void btn_Generate_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != string.Empty)
             {
@@ -114,26 +125,21 @@ namespace BarCode
             }
             else
             {
-                MessageBox.Show("Please input encode value.");
+                MessageBox.Show("Vui lòng nhập mã barcode.");
             }
         }
 
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        private void btn_Print_Click(object sender, EventArgs e)
         {
-            e.Graphics.DrawImage(pictureBox1.Image, 100, 100, 700, 600);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            printPreviewDialog1.Document = printDocument1;
-            printPreviewDialog1.ShowDialog();
-        }
-
-        private void GenerateBarcode_Load(object sender, EventArgs e)
-        {
-            this.panel1.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, this.ClientSize.Height / 2 - panel1.Size.Height / 2);
-            this.panel1.Anchor = AnchorStyles.None;
-            this.ActiveControl = textBox1;
+            if (textBox1.Text != string.Empty)
+            {
+                printPreviewDialog1.Document = printDocument1;
+                printPreviewDialog1.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập mã barcode.");
+            }
         }
     }
 }

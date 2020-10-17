@@ -23,13 +23,14 @@ namespace BarCode
             //pnlItem.Visible = false;
             this.pnlItem.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, this.ClientSize.Height / 2 - panel1.Size.Height / 2);
             //this.pnlItem.Anchor = AnchorStyles.None;
-            int y = (pn_Right.Size.Height - 105 * 6) / 7;
-            btn_Generate.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, y);
-            btn_Input.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, y*4);
-            btn_Search.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, y * 7);
-            btn_Info.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, y * 10);
-            btn_CheckPrice.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, y * 13);
-            btn_Exit.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, y * 16);
+            int distance = (pn_Right.Size.Height - 105 * 6) / 7;
+            int start = distance;
+            btn_Generate.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, start);
+            btn_Input.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, start = start +105+ distance);
+            btn_Search.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, start = start + 105 + distance);
+            btn_Info.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, start = start + 105 + distance);
+            btn_CheckPrice.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, start = start + 105 + distance);
+            btn_Exit.Location = new Point(this.ClientSize.Width / 2 - panel1.Size.Width / 2, start = start + 105 + distance);
         }
 
         
